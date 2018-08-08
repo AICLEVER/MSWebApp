@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>아이클래버 홈 페이지</title>
+		<!-- vegas plugin을 사용할려면 css 화일하고 vegas jquery 소스 화일을 link 해줘야 함 -->
+		<link href="css/vg.css" rel="stylesheet">
+		<link href="css/vegas.min.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="js/html5shiv.min.js"></script>
+		<![endif]-->				
+	</head>
+	<body>  
+		<div id="content">
+	  <h1>3D 엔진을 이용한 AiClever Company Logo</h1>				
+	  <h2>주소 : 수원시 영통구 삼성로 198 브라운빌딩 4층</h2>		
+      <p><strong><a href="http://vegas.jaysalvat.com/">Veagas.js</a></strong> 플러그인을 이용한<br>풀스크린 동영상 배경 이미지.</p>
+	  </div>
+	  	<!-- jQuery plugin을 사용하기 위해서는 기본적으로 jQuery 화일을 넣어줘야 함 -->
+		<script src="js/jquery-2.2.4.min.js"></script>
+		<!--vegas jquery 소스 화일을 link 해줘야 함  - vegas jquery는 여러개의 이미지를 배경 이미지로 사용 가능함. -->
+		<script src="js/vegas.min.js"></script>
+		<!-- sript 소스 를 이용해서 배경 image를 지정해주는 부분 -->
+		<script>
+			$(function(){
+				// vegas plugin을 이용해서 full screen을 적용해 줄 대상이 Web 문서 전체이기 때문에 먼저 
+				// body tag 에 대해서 vegas plugin 의 vegas() 메서드를 지정해준다. () 안에 이미지를 지정해준다.
+				// 여러개의 이미지를 slides 처럼 사용할 것이기 때문에 slides 해주고 [] 안에 이미지를 지정해줌.
+				$('body').vegas({
+					slides:[
+						//{src:'images/AiCleverPPT.jpg'},
+						//{src:'images/AiClever-VR.jpg'},
+						//{src:'images/nature-3.jpg'},
+						// 동영상을 추가할 때에는 동영상이 재생되지 않을 때를 대비해서 포스터 이미지도 같이 지정해줘야 함.
+						{src: "images/AiClever-VR.jpg", 
+							video : {
+								src: ['videos/AiCleverLogo.mp4'],
+								loop: false,  /* 반복 option을 정하는 부분 */
+								mute: true    /* 소리 option을 정하는 부분 */
+							}
+						}		
+					],
+					delay:3500
+				});			
+			});
+		</script>		
+	</body>
+</html>
